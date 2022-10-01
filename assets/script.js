@@ -33,7 +33,7 @@ function generatePassword() {
 // con3 refers to the second confirm window and if the value is "ok" or true the code will execute
 // and add all special characters from variable "symbol" into the "stored" variable and while using
 // .concat the previous data is kept and added onto
- var con3 = confirm("Do you want to add symbols? \nAvailable symbols: ! @ # $ % ^ & *");
+ var con3 = confirm("Do you want to add symbols?");
     if (con3 == true){
       stored = stored.concat(symbol);
     }
