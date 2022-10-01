@@ -3,18 +3,34 @@ var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var symbol = "!@#$%^&*";
 var numbers = "0123456789";
+var stored = "";
 
 function generatePassword() {
- var length = prompt("How many characters would you like to use between 8-128?");
+ var length = Number(prompt("How many characters would you like to use between 8-128?"));
+    if (length < 8 || length > 128 || !length) {
+      alert("That is not a valid input, please try again.")
+      generatePassword();
+    }
 
  var con1 = confirm("Do you want to add lowercase letters?");
+    if (con1 == true){
+      stored = stored.concat(lower);
+    }
 
  var con2 = confirm("Do you want to add capital letters");
+    if (con2 == true){
+      stored = stored.concat(upper);
+    }
 
  var con3 = confirm("Do you want to add symbols? \nAvailable symbols: ! @ # $ % ^ & *");
+    if (con3 == true){
+      stored = stored.concat(symbol);
+    }
 
  var con4 = confirm("Do you want to add numbers?");
-
+    if (con4 == true){
+      stored = stored.concat(numbers);
+    }
 
 }
 
