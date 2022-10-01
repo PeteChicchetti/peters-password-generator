@@ -4,6 +4,7 @@ var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var symbol = "!@#$%^&*";
 var numbers = "0123456789";
 var stored = "";
+var pass = "";
 
 function generatePassword() {
  var length = Number(prompt("How many characters would you like to use between 8-128?"));
@@ -31,6 +32,12 @@ function generatePassword() {
     if (con4 == true){
       stored = stored.concat(numbers);
     }
+
+for (var i = 0; i < length; i++) {
+    pass += stored[(Math.floor(Math.random()*stored.length))];
+}
+
+return pass;
 
 }
 
